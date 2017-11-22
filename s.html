@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script src="jquery.js"></script>
+	<script>
+		var flag=false;
+		window.addEventListener('load',init);
+		function init(){
+			setTimeout(scroll,30);
+			function scroll(){
+				window.addEventListener('scroll',s1)
+				
+			}
+			function s1(){
+					window.removeEventListener('scroll',s1);
+					flag=true;
+					if(flag==true) scrollf(); else
+					return;
+			}
+			function scrollf(){
+				window.addEventListener('scroll',function(){
+					alert(5);
+
+				})
+			}
+		}
+	</script>
+</head>
+<body style="height:3000px">
+</body>
+</html>
