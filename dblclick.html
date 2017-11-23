@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script>
+		window.addEventListener('load',function(){
+			var $flag=false;
+			$button=document.querySelector('div[class=b] [name=b1]');
+			$result=document.querySelector('div[class=b] > div[id=result]');
+			$button.addEventListener('click',_click);
+			function _click(){
+				setTimeout(check,500);
+				$flag=false;
+			}	
+			function check(){
+				if($flag==true)  return;
+				$result.innerHTML=parseInt($result.innerHTML)-1;
+			}
+			$button.addEventListener('dblclick',_dblclick);
+			function _dblclick(){
+				$flag=true;
+				$result.innerHTML=parseInt($result.innerHTML)+1;
+			}
+		})
+	</script>
+</head>
+<body>
+	<div class="b">
+		<button name="b1">click</button>
+		<div id="result">0</div>
+	</div>
+</body>
+</html>
